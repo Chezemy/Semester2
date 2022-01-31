@@ -32,7 +32,7 @@ Regularfile - код идентификации для обычного файл
 <li>Чтение: nc -U socket.sock (клиент)
 <li>Удаление: системной функции unlink или командой rm socket.sock
   
-<h2>Screenshot</h2>
+![image](https://user-images.githubusercontent.com/40539112/151758052-671b7f9d-43a5-44dd-91e7-fb673c4568f5.png)
 
   “p” pipe именованный канал Как и локальные сокеты, именованные каналы позволяют осуществлять обмен данными между локальными процессами.
 <li>Создание: mkfifo pkanal и просмотр ls -ld pkanal
