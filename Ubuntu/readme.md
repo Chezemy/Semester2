@@ -19,8 +19,9 @@
 
 https://docs.google.com/document/d/1z27O5xLblWKjIxcXRZnbd1smm-oYa8bt/edit
 
-
-![image](https://user-images.githubusercontent.com/40539112/149882870-e9468ded-bb9f-49df-b7f5-310ad61f8e2d.png)<br>
 Ls (сокращение от list) вывод содержимого каталога.<br> 
 cd (сокращение от «change directory», «изменить каталог») - Команда, которая используется для движения по дереву каталогов. <br>
 GCC - GNU Compiler Collection - набор компиляторов и сопутствующих утилит, GCC входит в состав любого дистрибутива Linux и, как правило, устанавливается по умолчанию.
+
+![image](https://user-images.githubusercontent.com/40539112/149882870-e9468ded-bb9f-49df-b7f5-310ad61f8e2d.png)<br>
+
