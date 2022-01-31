@@ -17,6 +17,8 @@
 4-5. Два способа создания меню с выбором: 
 Первый способ это вызов функции, Второй способ это выбор команды через select.
 
+https://docs.google.com/document/d/1z27O5xLblWKjIxcXRZnbd1smm-oYa8bt/edit
+
 
 ![image](https://user-images.githubusercontent.com/40539112/149882870-e9468ded-bb9f-49df-b7f5-310ad61f8e2d.png)<br>
 Ls (сокращение от list) вывод содержимого каталога.<br> 
