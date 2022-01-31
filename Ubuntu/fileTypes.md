@@ -40,7 +40,7 @@ Regularfile - код идентификации для обычного файл
 <li>Чтение: во втором окне cat pkanal
 <li>Удаление: rm pkanal
 
-<h2>Screenshot</h2>
+![image](https://user-images.githubusercontent.com/40539112/151757565-3896e3bb-86d6-4d35-bd4f-93a30b9791f4.png)
   
   “b” block device файл блочного устройства (sudo su)
 <li>Создание: sudo mknod blockd b 5 100
