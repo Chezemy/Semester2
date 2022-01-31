@@ -49,7 +49,7 @@ Regularfile - код идентификации для обычного файл
 bs=100M(чисто мегабайт) count=5(количество итераций)
 <li>Удаление: rm block	d
   
-<h2>Screenshot</h2>
+![image](https://user-images.githubusercontent.com/40539112/151758430-ff9bde42-d4d1-4b7b-b612-e48dec1418f1.png)
   
  “c” chat device файл символьного устройства 
 <li>Создание: Надо зайти от администратора mknod charv c 5 100
