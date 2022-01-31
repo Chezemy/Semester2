@@ -23,3 +23,75 @@ Regularfile - код идентификации для обычного файл
 
 <li>Чтение: cat file2
 <li>Удаление: unlink file1. Просмотр того, что ссылка удалилась ls -ld file1
+  
+![image](https://user-images.githubusercontent.com/40539112/151756594-d2a8dc42-04e0-400c-9b4a-9080b70a6065.png)
+
+“s” unix sockets файл локального сокета. Сокеты локального домена используются для обмена данными между процессами. В основном они используются такими службами, как X windows, syslog и т.д. 
+<li>Создание: mkfifo socket.sock (можно не использовать)
+<li>Запись: nc -lU socket.sock (сервер)
+<li>Чтение: nc -U socket.sock (клиент)
+<li>Удаление: системной функции unlink или командой rm socket.sock
+  
+<h2>Screenshot/h2>
+
+  “p” pipe именованный канал Как и локальные сокеты, именованные каналы позволяют осуществлять обмен данными между локальными процессами.
+<li>Создание: mkfifo pkanal и просмотр ls -ld pkanal
+<li>Запись: echo "запись" > pkanal
+<li>Чтение: во втором окне cat pkanal
+<li>Удаление: rm pkanal
+
+<h2>Screenshot/h2>
+  
+  “b” block device файл блочного устройства (sudo su)
+<li>Создание: sudo mknod blockd b 5 100
+<li>Запись: echo tekst > blockd
+<li>bash: blockd: Отказано в доступе
+bs=100M(чисто мегабайт) count=5(количество итераций)
+<li>Удаление: rm block	d
+  
+<h2>Screenshot/h2>
+  
+ “c” chat device файл символьного устройства 
+<li>Создание: Надо зайти от администратора mknod charv c 5 100
+<li>bs=100M(чисто мегабайт) count=5(количество итераций)
+
+<li>Удаление: sudo rm charv
+<br>А символьные файлы устройств используются для небуферизованного обмена данными. Большинство устройств способно принимать и отправлять данные либо блоками (блочные устройства), либо сплошным потоком байтов (символьные устройства), но некоторые (такие как жёсткий диск) сочетают в себе обе эти возможности. Работа с первым типом устройств возможна либо через блочные, либо через символьные файлы, а вот с последним типом — подходят и те, и другие. 
+  
+<h2>Screenshot/h2>
+  
+ Уточнение про жесткую ссылку
+<li>Создали папку: mkdir test && cd test
+<li>Создали файл: echo "some text" > source
+<li>Создали жесткую ссылку: ln source hardlink
+
+Добавили еще файлы для мусора
+<li>echo "some text" > file1
+<li>echo "some text" > file2
+<li>echo "some text" > file3
+<li>echo "some text" > abc
+
+<br>В свойствах stat hardlink взяли Inode: 397128
+<br>Поиск по иноду find -inum 397128
+<br>Нашли файл
+
+
+СКРИПТ
+
+<br>WHERE_TO_LOOK_FOR=$1
+<br>FILE_PATH=$2
+<br>FOR_WHICH_FILE_YOU_LOOK_LINK=$3
+<br>for dirname in $(find -L $1 -samefile $2)
+<br>do
+<br>ls -l "$dirname"
+<br>ls -i1 "$dirname"
+<br>echo "Вы ищете хард ссылку для файла $2/$3. Его инод: $(stat -c %i $2/$3)"
+<br>echo "Все файлы с таким же инодом:"
+
+<br>find -inum $(stat -c %i $2/$3)
+
+<br>done
+
+<br>Для запуска bash script1.sh test /home/user/test source
+  
+  <h2></h2>
